@@ -51,10 +51,10 @@ const free = _.minBy(obj, 'free').free;
     <React.Fragment>
       <div>{<SearchBar onSearch={searchHandler} />}</div>
       {result.length > 0 && (
-        <div className="table-container">
-          <table className="table">
+        <div>
+          <table>
             <thead>
-              <tr className="fixed-head">
+              <tr >
                 <th>Name</th>
                 <th>Batch</th>
                 <th>Stock</th>
