@@ -9,9 +9,6 @@ const TablePage = (props) => {
 //   const [itemsPerPage] = useState(10);
   const [selectedBatch, setSelectedBatch] = useState();
  const [searching, setSearching] = useState('');
- const searchHandler = (searchQuery) => {
-    setSearching(searchQuery);
-  };
    const batchWise = (o) => {
     const selectedInputBatch = o.target.value;
     setSelectedBatch(selectedInputBatch);
@@ -47,7 +44,9 @@ const free = _.minBy(obj, 'free').free;
 
   // Change page
 //   const paginate = pageNumber => setCurrentPage(pageNumber);
-
+ const searchHandler = (searchQuery) => {
+    setSearching(searchQuery);
+  };
   return (
     <React.Fragment>
       <div>{<SearchBar onSearch={searchHandler} />}</div>
