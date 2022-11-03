@@ -12,13 +12,13 @@ const TablePage = (props) => {
  const searchHandler = (searchQuery) => {
     setSearching(searchQuery);
   };
-  let result = props.items.filter((o) => {
-    return o.name.toLowerCase().includes(searching);
-  });
    const batchWise = (o) => {
     const selectedInputBatch = o.target.value;
     setSelectedBatch(selectedInputBatch);
   };
+    let result = props.items.filter((o) => {
+    return o.name.toLowerCase().includes(searching);
+  });
   const batchResult=_(props.remaining.filter((o) => {
     return o.batch === selectedBatch;
   })).groupBy('batch').map((obj,key)=>{
@@ -95,20 +95,7 @@ const free = _.minBy(obj, 'free').free;
                 </tr>
               ))}
               </tbody>
-            {selectedBatch !== 'All' && selectedBatch && (
-                <Batches
-                  key={batchResult[0].name}
-                  name={batchResult[0].name}
-                  batch={batchResult[0].batch}
-                  stock={batchResult[0].stock}
-                  deal={batchResult[0].deal}
-                  free={batchResult[0].free}
-                  mrp={batchResult[0].mrp}
-                  rate={batchResult[0].rate}
-                  exp={batchResult[0].exp}
-                />
-              )}
-              
+          
           </table>
         </div>
       )}
