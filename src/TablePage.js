@@ -85,11 +85,7 @@ const free = _.minBy(obj, 'free').free;
                   <td>{d.mrp}</td>
                   <td>{d.rate}</td>
                   <td>
-                    {d.exp.getDate() +
-                      '/' +
-                      (d.exp.getMonth() + 1) +
-                      '/' +
-                      d.exp.getFullYear()}
+                    {d.exp.getDate() +'/' + (d.exp.getMonth() + 1) +'/' + d.exp.getFullYear()}
                   </td>
                 </tr>
               ))}
@@ -98,12 +94,8 @@ const free = _.minBy(obj, 'free').free;
           </table>
         </div>
       )}
-      
-             
-    </React.Fragment>
-    
-    
-  );
+</React.Fragment>
+);
 };
 
 export default TablePage;
